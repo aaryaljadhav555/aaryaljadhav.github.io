@@ -4,70 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aaryal Jadhav | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;background:#0f172a;color:#e2e8f0;scroll-behavior:smooth}
-
-    header{
-      padding:60px 20px;
-      text-align:center;
-      background:linear-gradient(135deg,#1e293b,#020617);
-    }
-
-    h1{font-size:2.8rem}
-    .subtitle{color:#94a3b8;margin-top:10px;font-size:1.1rem}
-
-    nav{
-      position:sticky;top:0;background:#020617;padding:10px;
-      display:flex;justify-content:center;gap:20px;z-index:1000
-    }
-
-    nav a{color:#38bdf8;text-decoration:none;font-weight:500}
-
-    section{padding:50px 20px;max-width:1100px;margin:auto}
-
-    h2{margin-bottom:25px;color:#38bdf8}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px
-    }
-
-    .card{
-      background:#1e293b;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 0 15px rgba(0,0,0,0.3);
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-8px) scale(1.02);
-    }
-
-    .btn{
-      display:inline-block;
-      margin-top:15px;
-      padding:10px 15px;
-      background:#3b82f6;
-      border-radius:8px;
-      color:white;
-      text-decoration:none;
-    }
-
-    input, textarea{
-      width:100%;padding:10px;margin:8px 0;border-radius:8px;border:none
-    }
-
-    button{
-      padding:10px;background:#3b82f6;color:white;border:none;border-radius:8px;cursor:pointer
-    }
-
-    footer{text-align:center;padding:20px;background:#020617;color:#94a3b8}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -82,13 +20,13 @@
 
 <header>
   <h1>Aaryal Jadhav</h1>
-  <p class="subtitle">Data Analytics & AI Enthusiast</p>
-  <a href="#contact" class="btn">Contact Me</a>
+  <p class="subtitle">Aspiring Data Analyst | AI Enthusiast</p>
+  <a href="#contact" class="btn">Hire Me</a>
 </header>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a passionate BTech student focused on Data Analytics, Artificial Intelligence, and dashboard development. I enjoy transforming raw data into meaningful insights using modern tools.</p>
+  <p>I am a BTech student passionate about Data Analytics and AI.</p>
 </section>
 
 <section id="skills">
@@ -102,25 +40,8 @@
 </section>
 
 <section id="certs">
-  <h2>Certifications</h2>
+  <h2>Certificates</h2>
   <div class="grid" id="certList"></div>
-</section>
-
-<section>
-  <h2>Add New Content</h2>
-
-  <h3>Add Skill</h3>
-  <input id="skillInput" placeholder="Enter skill">
-  <button onclick="addSkill()">Add</button>
-
-  <h3>Add Project</h3>
-  <input id="projTitle" placeholder="Title">
-  <textarea id="projDesc" placeholder="Description"></textarea>
-  <button onclick="addProject()">Add</button>
-
-  <h3>Add Certificate</h3>
-  <input id="certInput" placeholder="Certificate name">
-  <button onclick="addCert()">Add</button>
 </section>
 
 <section id="contact">
@@ -128,65 +49,9 @@
   <p>Email: your-email@example.com</p>
   <p>GitHub: <a href="#">Add link</a></p>
   <p>LinkedIn: <a href="#">Add link</a></p>
-  <a href="#" class="btn">Download Resume</a>
+  <a href="resume.pdf" class="btn" download>Download Resume</a>
 </section>
 
-<footer>
-  <p>© 2026 Aaryal Jadhav | Portfolio</p>
-</footer>
-
-<script>
-let data = JSON.parse(localStorage.getItem("portfolio")) || {
-  skills:["Data Analysis","Power BI","MATLAB","AI Basics","Excel"],
-  projects:[
-    {title:"Power BI Dashboard",desc:"Interactive dashboards for visualization"},
-    {title:"Data Analysis Project",desc:"Insights using charts and data"}
-  ],
-  certs:[
-    "Deloitte Data Analytics Job Simulation (2025)",
-    "Yuva AI for All - NASSCOM (2026)",
-    "Power BI Workshop (2025)",
-    "MATLAB Programming - Coursera (2025)",
-    "Chemistry Course - Coursera (2026)"
-  ]
-};
-
-function save(){
-  localStorage.setItem("portfolio",JSON.stringify(data));
-}
-
-function render(){
-  document.getElementById("skillsList").innerHTML = data.skills.map(s=>`<div class='card'>${s}</div>`).join('');
-
-  document.getElementById("projectList").innerHTML = data.projects.map(p=>`
-    <div class='card'>
-      <h3>${p.title}</h3>
-      <p>${p.desc}</p>
-    </div>
-  `).join('');
-
-  document.getElementById("certList").innerHTML = data.certs.map(c=>`<div class='card'>${c}</div>`).join('');
-}
-
-function addSkill(){
-  let val=document.getElementById("skillInput").value;
-  if(val){data.skills.push(val);save();render();}
-}
-
-function addProject(){
-  let t=document.getElementById("projTitle").value;
-  let d=document.getElementById("projDesc").value;
-  if(t && d){data.projects.push({title:t,desc:d});save();render();}
-}
-
-function addCert(){
-  let val=document.getElementById("certInput").value;
-  if(val){data.certs.push(val);save();render();}
-}
-
-render();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
