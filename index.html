@@ -3,102 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aaryal Jadhav Portfolio</title>
+  <title>Aaryal Jadhav | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {font-family: Arial; margin:0; background:#0f172a; color:white}
-    header {padding:20px; text-align:center; background:#1e293b}
-    h1 {margin:0}
-    section {padding:20px}
-    .card {background:#1e293b; padding:15px; margin:10px 0; border-radius:10px}
-    input, textarea {width:100%; padding:8px; margin:5px 0}
-    button {padding:10px; background:#3b82f6; color:white; border:none; cursor:pointer}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:#0f172a;color:#e2e8f0;scroll-behavior:smooth}
+
+    header{
+      padding:60px 20px;
+      text-align:center;
+      background:linear-gradient(135deg,#1e293b,#020617);
+    }
+
+    h1{font-size:2.8rem}
+    .subtitle{color:#94a3b8;margin-top:10px;font-size:1.1rem}
+
+    nav{
+      position:sticky;top:0;background:#020617;padding:10px;
+      display:flex;justify-content:center;gap:20px;z-index:1000
+    }
+
+    nav a{color:#38bdf8;text-decoration:none;font-weight:500}
+
+    section{padding:50px 20px;max-width:1100px;margin:auto}
+
+    h2{margin-bottom:25px;color:#38bdf8}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px
+    }
+
+    .card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:15px;
+      box-shadow:0 0 15px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px) scale(1.02);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:15px;
+      padding:10px 15px;
+      background:#3b82f6;
+      border-radius:8px;
+      color:white;
+      text-decoration:none;
+    }
+
+    input, textarea{
+      width:100%;padding:10px;margin:8px 0;border-radius:8px;border:none
+    }
+
+    button{
+      padding:10px;background:#3b82f6;color:white;border:none;border-radius:8px;cursor:pointer
+    }
+
+    footer{text-align:center;padding:20px;background:#020617;color:#94a3b8}
   </style>
 </head>
+
 <body>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#certs">Certificates</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <header>
-  <h1 id="name">Aaryal Jadhav</h1>
-  <p id="title">Data Analytics & AI Enthusiast</p>
+  <h1>Aaryal Jadhav</h1>
+  <p class="subtitle">Data Analytics & AI Enthusiast</p>
+  <a href="#contact" class="btn">Contact Me</a>
 </header>
 
-<section>
-  <h2>About</h2>
-  <p id="about">I am passionate about data analytics, AI and dashboard creation.</p>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a passionate BTech student focused on Data Analytics, Artificial Intelligence, and dashboard development. I enjoy transforming raw data into meaningful insights using modern tools.</p>
 </section>
 
-<section>
+<section id="skills">
   <h2>Skills</h2>
-  <ul id="skills"></ul>
+  <div class="grid" id="skillsList"></div>
 </section>
 
-<section>
+<section id="projects">
   <h2>Projects</h2>
-  <div id="projects"></div>
+  <div class="grid" id="projectList"></div>
+</section>
+
+<section id="certs">
+  <h2>Certifications</h2>
+  <div class="grid" id="certList"></div>
 </section>
 
 <section>
-  <h2>Certificates</h2>
-  <ul id="certificates"></ul>
-</section>
+  <h2>Add New Content</h2>
 
-<section>
-  <h2>Add / Update Content</h2>
   <h3>Add Skill</h3>
   <input id="skillInput" placeholder="Enter skill">
-  <button onclick="addSkill()">Add Skill</button>
+  <button onclick="addSkill()">Add</button>
 
   <h3>Add Project</h3>
-  <input id="projTitle" placeholder="Project Title">
-  <textarea id="projDesc" placeholder="Project Description"></textarea>
-  <button onclick="addProject()">Add Project</button>
+  <input id="projTitle" placeholder="Title">
+  <textarea id="projDesc" placeholder="Description"></textarea>
+  <button onclick="addProject()">Add</button>
 
   <h3>Add Certificate</h3>
-  <input id="certInput" placeholder="Certificate Name">
-  <button onclick="addCert()">Add Certificate</button>
+  <input id="certInput" placeholder="Certificate name">
+  <button onclick="addCert()">Add</button>
 </section>
 
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your-email@example.com</p>
+  <p>GitHub: <a href="#">Add link</a></p>
+  <p>LinkedIn: <a href="#">Add link</a></p>
+  <a href="#" class="btn">Download Resume</a>
+</section>
+
+<footer>
+  <p>© 2026 Aaryal Jadhav | Portfolio</p>
+</footer>
+
 <script>
-let data = {
-  skills: ["Data Analysis","Power BI","MATLAB","AI Basics"],
-  projects: [],
-  certificates: [
-    "Deloitte Data Analytics Simulation",
-    "NASSCOM AI Certificate",
-    "Power BI Workshop",
-    "MATLAB Programming"
+let data = JSON.parse(localStorage.getItem("portfolio")) || {
+  skills:["Data Analysis","Power BI","MATLAB","AI Basics","Excel"],
+  projects:[
+    {title:"Power BI Dashboard",desc:"Interactive dashboards for visualization"},
+    {title:"Data Analysis Project",desc:"Insights using charts and data"}
+  ],
+  certs:[
+    "Deloitte Data Analytics Job Simulation (2025)",
+    "Yuva AI for All - NASSCOM (2026)",
+    "Power BI Workshop (2025)",
+    "MATLAB Programming - Coursera (2025)",
+    "Chemistry Course - Coursera (2026)"
   ]
 };
 
-function render() {
-  document.getElementById("skills").innerHTML = data.skills.map(s => `<li>${s}</li>`).join('');
+function save(){
+  localStorage.setItem("portfolio",JSON.stringify(data));
+}
 
-  document.getElementById("projects").innerHTML = data.projects.map(p => `
+function render(){
+  document.getElementById("skillsList").innerHTML = data.skills.map(s=>`<div class='card'>${s}</div>`).join('');
+
+  document.getElementById("projectList").innerHTML = data.projects.map(p=>`
     <div class='card'>
       <h3>${p.title}</h3>
       <p>${p.desc}</p>
     </div>
   `).join('');
 
-  document.getElementById("certificates").innerHTML = data.certificates.map(c => `<li>${c}</li>`).join('');
+  document.getElementById("certList").innerHTML = data.certs.map(c=>`<div class='card'>${c}</div>`).join('');
 }
 
-function addSkill() {
-  let val = document.getElementById("skillInput").value;
-  if(val) data.skills.push(val);
-  render();
+function addSkill(){
+  let val=document.getElementById("skillInput").value;
+  if(val){data.skills.push(val);save();render();}
 }
 
-function addProject() {
-  let title = document.getElementById("projTitle").value;
-  let desc = document.getElementById("projDesc").value;
-  if(title && desc) data.projects.push({title, desc});
-  render();
+function addProject(){
+  let t=document.getElementById("projTitle").value;
+  let d=document.getElementById("projDesc").value;
+  if(t && d){data.projects.push({title:t,desc:d});save();render();}
 }
 
-function addCert() {
-  let val = document.getElementById("certInput").value;
-  if(val) data.certificates.push(val);
-  render();
+function addCert(){
+  let val=document.getElementById("certInput").value;
+  if(val){data.certs.push(val);save();render();}
 }
 
 render();
