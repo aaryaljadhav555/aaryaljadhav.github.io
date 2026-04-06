@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaryal Jadhav Portfolio</title>
+  <style>
+    body {font-family: Arial; margin:0; background:#0f172a; color:white}
+    header {padding:20px; text-align:center; background:#1e293b}
+    h1 {margin:0}
+    section {padding:20px}
+    .card {background:#1e293b; padding:15px; margin:10px 0; border-radius:10px}
+    input, textarea {width:100%; padding:8px; margin:5px 0}
+    button {padding:10px; background:#3b82f6; color:white; border:none; cursor:pointer}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="name">Aaryal Jadhav</h1>
+  <p id="title">Data Analytics & AI Enthusiast</p>
+</header>
+
+<section>
+  <h2>About</h2>
+  <p id="about">I am passionate about data analytics, AI and dashboard creation.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul id="skills"></ul>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div id="projects"></div>
+</section>
+
+<section>
+  <h2>Certificates</h2>
+  <ul id="certificates"></ul>
+</section>
+
+<section>
+  <h2>Add / Update Content</h2>
+  <h3>Add Skill</h3>
+  <input id="skillInput" placeholder="Enter skill">
+  <button onclick="addSkill()">Add Skill</button>
+
+  <h3>Add Project</h3>
+  <input id="projTitle" placeholder="Project Title">
+  <textarea id="projDesc" placeholder="Project Description"></textarea>
+  <button onclick="addProject()">Add Project</button>
+
+  <h3>Add Certificate</h3>
+  <input id="certInput" placeholder="Certificate Name">
+  <button onclick="addCert()">Add Certificate</button>
+</section>
+
+<script>
+let data = {
+  skills: ["Data Analysis","Power BI","MATLAB","AI Basics"],
+  projects: [],
+  certificates: [
+    "Deloitte Data Analytics Simulation",
+    "NASSCOM AI Certificate",
+    "Power BI Workshop",
+    "MATLAB Programming"
+  ]
+};
+
+function render() {
+  document.getElementById("skills").innerHTML = data.skills.map(s => `<li>${s}</li>`).join('');
+
+  document.getElementById("projects").innerHTML = data.projects.map(p => `
+    <div class='card'>
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+    </div>
+  `).join('');
+
+  document.getElementById("certificates").innerHTML = data.certificates.map(c => `<li>${c}</li>`).join('');
+}
+
+function addSkill() {
+  let val = document.getElementById("skillInput").value;
+  if(val) data.skills.push(val);
+  render();
+}
+
+function addProject() {
+  let title = document.getElementById("projTitle").value;
+  let desc = document.getElementById("projDesc").value;
+  if(title && desc) data.projects.push({title, desc});
+  render();
+}
+
+function addCert() {
+  let val = document.getElementById("certInput").value;
+  if(val) data.certificates.push(val);
+  render();
+}
+
+render();
+</script>
+
+</body>
+</html>
