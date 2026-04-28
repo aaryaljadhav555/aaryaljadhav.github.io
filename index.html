@@ -1,108 +1,75 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaryal Jadhav | B.Tech AIML Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Aaryal Jadhav | AI & ML Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
     <nav>
-        <div class="logo">AARYAL JADHAV</div>
+        <div class="logo">AJ<span>.</span></div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#certificates">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="hero">
+    <header id="home">
         <div class="hero-content">
-            <img src="images/profile.jpg" alt="Aaryal Jadhav" class="profile-img">
-            <h1>Aaryal Jadhav</h1>
-            <p class="subtitle">B.Tech in Artificial Intelligence & Machine Learning</p>
-            <p class="intro-text">Engineering student from Solapur dedicated to Data Analytics, Modern AI, and Sustainable Tech solutions.</p>
+            <h1>Hi, I'm <span>Aaryal Jadhav</span></h1>
+            <p>AI & ML Engineering Student | Data Analyst | Professional Problem Solver</p>
+            <a href="#contact" class="btn">Get In Touch</a>
         </div>
-    </section>
+    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="glass-card about-grid">
-            <div class="about-item">
-                <h3><i class="fas fa-university"></i> Education</h3>
-                <p>B.Tech AIML Student. Specialized in Python, MATLAB, and Linear Algebra.</p>
+    <section id="certificates">
+        <h2 class="section-title">Professional Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <h3>Data Analytics Job Simulation</h3>
+                <p class="issuer">Deloitte</p>
+                <p class="date">Dec 2025</p>
+                <ul>
+                    <li>Forensic Technology</li>
+                    <li>Data Analysis</li>
+                </ul>
             </div>
-            <div class="about-item">
-                <h3><i class="fas fa-seedling"></i> Interests</h3>
-                <p>Green Chemistry (Solapur SDG), Algorithmic Trading, and Mahogany Plantations.</p>
+
+            <div class="cert-card">
+                <h3>Introduction to Modern AI</h3>
+                <p class="issuer">Cisco Networking Academy</p>
+                <p class="date">Feb 2026</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Programming with MATLAB</h3>
+                <p class="issuer">Vanderbilt University (Coursera)</p>
+                <p class="date">Dec 2025</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Yuva AI for All</h3>
+                <p class="issuer">Nasscom FutureSkills Prime</p>
+                <p class="date">Feb 2026</p>
+            </div>
+            
+            <div class="cert-card">
+                <h3>PowerBI Workshop</h3>
+                <p class="issuer">Office Master</p>
+                <p class="date">Aug 2025</p>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="grid">
-            <div class="card project-card">
-                <img src="images/ai4a.png" alt="Ai4A">
-                <h3>Ai4A Project</h3>
-                <p>AI for All initiative focused on making technology accessible.</p>
-            </div>
-            <div class="card project-card">
-                <img src="images/design-thinking.png" alt="Design Thinking">
-                <h3>Design Thinking</h3>
-                <p>Solving user problems through iterative prototyping and feedback.</p>
-            </div>
-            <div class="card project-card">
-                <img src="images/ace.png" alt="ACE">
-                <h3>ACE Project</h3>
-                <p>Advanced coding project focusing on engineering logic.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements">
-        <h2>Achievements</h2>
-        <div class="grid">
-            <div class="card ach-card"><h3>Deloitte Job Simulation</h3><p>Data Analysis & Forensic Tech</p></div>
-            <div class="card ach-card"><h3>Coursera</h3><p>MATLAB Programming (Vanderbilt University)</p></div>
-            <div class="card ach-card"><h3>NetAcad</h3><p>Cisco Certified: Modern AI & Device Literacy</p></div>
-            <div class="card ach-card"><h3>Yuva AI</h3><p>NASSCOM Yuva AI for All Certification</p></div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <h2>Gallery (Click to Zoom)</h2>
-        <div class="gallery-grid">
-            <img src="images/deloite.png" class="zoomable" alt="Deloitte Certificate">
-            <img src="images/matlab.png" class="zoomable" alt="MATLAB Certificate">
-            <img src="images/modern%20ai.png" class="zoomable" alt="Modern AI Certificate">
-            <img src="images/power%20bi.png" class="zoomable" alt="Power BI Certificate">
-            <img src="images/yuva%20ai.png" class="zoomable" alt="Yuva AI Certificate">
-            <img src="images/mobile%20device.png" class="zoomable" alt="Device Literacy">
-        </div>
-    </section>
-
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="glass-card contact-flex">
-            <div class="contact-box"><i class="fas fa-envelope"></i> aaryaljadhav555@gmail.com</div>
-            <div class="contact-box"><i class="fas fa-phone"></i> +91 9993337594</div>
-            <div class="contact-box"><a href="https://linkedin.com/in/aaryaljadhav" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></div>
-        </div>
-    </section>
+    <footer>
+        <p>&copy; 2026 Aaryal Jadhav. Built with passion and code.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+</html>
 </html>
