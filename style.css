@@ -61,5 +61,5 @@ header {
 .cert-item h3 { font-size: 1.1rem; padding: 0 10px; }
 .cert-item p { color: var(--text-dim); font-size: 0.9rem; }
 
-footer { text-align: center; padding: 40px; border-top: 1px solid #1e293b; color: var(--text-dim); }}
+footer { text-align: center; padding: 40px; border-top: 1px solid #1e293b; color: var(--text-dim); }footer { text-align: center; padding: 40px; border-top: 1px solid #1e293b; color: var(--text-dim); }}
     border:
