@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaryal Jadhav | Data Scientist</title>
+    <title>Aaryal Jadhav | Data Scientist & AI Specialist</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -13,43 +13,76 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#certificates">Certificates</a></li>
         </ul>
     </nav>
 
+    <header id="home">
+        <div class="hero-content">
+            <div class="profile-wrapper">
+                <img src="images/Aaryal.jpeg" alt="Aaryal Jadhav" class="profile-img">
+            </div>
+            <h1>Aaryal Jadhav</h1>
+            <p class="tagline">Data Scientist | AI & ML Engineer</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="#certificates" class="btn secondary">View Certs</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+            <p>
+                Detail-oriented Data Scientist with expertise in data analysis, machine learning, and statistical modelling. Experienced in handling large datasets, building predictive models, and generating insights that support data-driven decision-making. Strong command of Python, data visualisation tools, and analytical techniques. Skilled at identifying trends, improving system performance, and solving complex problems with practical solutions. Effective communicator dedicated to continuous learning and applying data science to real-world challenges.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>AI Chatbot with n8n Automation</h3>
+                    <p>Developed a sophisticated AI communication agent utilizing <strong>n8n</strong> for workflow automation. The system integrates OpenAI APIs to handle real-time data processing and intelligent response generation.</p>
+                    <div class="tags">
+                        <span>n8n</span> <span>OpenAI</span> <span>Automation</span> <span>Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="certificates" class="container">
-        <h2 class="section-title">Professional Certifications</h2>
-        <p class="section-subtitle">Click any certificate to view full size</p>
-        
+        <h2 class="section-title">Verified Certifications</h2>
+        <p class="section-subtitle">Click to enlarge</p>
         <div class="cert-grid">
             <div class="cert-card" onclick="openLightbox('images/deloite.png')">
                 <div class="cert-img-box"><img src="images/deloite.png" alt="Deloitte"></div>
-                <div class="cert-info"><h3>Data Analytics</h3><p>Deloitte</p></div>
+                <div class="cert-info"><h3>Data Analytics Simulation</h3><p>Deloitte [cite: 1, 2, 3]</p></div>
             </div>
-
             <div class="cert-card" onclick="openLightbox('images/modern ai.png')">
                 <div class="cert-img-box"><img src="images/modern ai.png" alt="Cisco AI"></div>
-                <div class="cert-info"><h3>Modern AI</h3><p>Cisco Academy</p></div>
+                <div class="cert-info"><h3>Introduction to Modern AI</h3><p>Cisco Academy [cite: 98]</p></div>
             </div>
-
             <div class="cert-card" onclick="openLightbox('images/yuva ai.png')">
                 <div class="cert-img-box"><img src="images/yuva ai.png" alt="Nasscom"></div>
-                <div class="cert-info"><h3>Yuva AI for All</h3><p>Nasscom</p></div>
+                <div class="cert-info"><h3>Yuva AI for All</h3><p>Nasscom [cite: 23]</p></div>
             </div>
-
             <div class="cert-card" onclick="openLightbox('images/matlab.png')">
                 <div class="cert-img-box"><img src="images/matlab.png" alt="Vanderbilt"></div>
-                <div class="cert-info"><h3>MATLAB Programming</h3><p>Vanderbilt</p></div>
+                <div class="cert-info"><h3>MATLAB Programming</h3><p>Vanderbilt University [cite: 51]</p></div>
             </div>
-
             <div class="cert-card" onclick="openLightbox('images/power bi.png')">
                 <div class="cert-img-box"><img src="images/power bi.png" alt="Power BI"></div>
-                <div class="cert-info"><h3>AI-Powered PowerBI</h3><p>Office Master</p></div>
+                <div class="cert-info"><h3>AI-Powered PowerBI</h3><p>Office Master [cite: 30]</p></div>
             </div>
-
             <div class="cert-card" onclick="openLightbox('images/mobile device.png')">
                 <div class="cert-img-box"><img src="images/mobile device.png" alt="Cisco Mobile"></div>
-                <div class="cert-info"><h3>IT Essentials</h3><p>Cisco Academy</p></div>
+                <div class="cert-info"><h3>Computer & Mobile Devices</h3><p>Cisco Academy [cite: 110]</p></div>
             </div>
         </div>
     </section>
@@ -59,7 +92,11 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
+    <footer>
+        <p>&copy; 2026 Aaryal Jadhav | Engineering Portfolio</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-</html>
+</html>html>
 </html>
